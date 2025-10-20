@@ -11,4 +11,5 @@ module es.vallecidacos.dam2interfacescooperacion2526 {
 
     opens es.vallecidacos.dam2interfacescooperacion2526 to javafx.fxml;
     exports es.vallecidacos.dam2interfacescooperacion2526;
+    exports es.vallecidacos.dam2interfacescooperacion2526.jorge;
 }
