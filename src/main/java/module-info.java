@@ -8,6 +8,7 @@ module es.vallecidacos.dam2interfacescooperacion2526 {
     requires net.synedra.validatorfx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.graphics;
 
     opens es.vallecidacos.dam2interfacescooperacion2526 to javafx.fxml;
     exports es.vallecidacos.dam2interfacescooperacion2526;
