@@ -1,4 +1,4 @@
-package es.vallecidacos.dam2interfacescooperacion2526;
+package es.vallecidacos.dam2interfacescooperacion2526.guillermo;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -21,12 +21,15 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) {
 
+        // Layout principal
         VBox root = new VBox(15);
         root.setPadding(new Insets(20));
 
+        // Título
         Label title = new Label("Registrar Lugar");
         title.setFont(new Font("Arial", 24));
 
+        // GridPane para campos
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
@@ -44,14 +47,18 @@ public class HelloApplication extends Application {
         grid.add(paisLabel, 0, 1);
         grid.add(paisField, 1, 1);
 
+        // Botón Guardar
         Button guardarButton = new Button("Guardar Lugar");
 
+        // Mensaje de estado
         messageLabel.setText("");
         messageLabel.setTextFill(Color.RED);
 
+        // VBox para la lista de tarjetas
         listaLugaresVBox.setPadding(new Insets(10));
         listaLugaresVBox.setAlignment(Pos.TOP_LEFT);
 
+        // Acción botón guardar
         guardarButton.setOnAction(e -> {
             String nombre = nombreField.getText().trim();
             String pais = paisField.getText().trim();
@@ -62,10 +69,11 @@ public class HelloApplication extends Application {
             }
 
             Lugar nuevo = new Lugar(nombre, pais);
-
+            // Añadir al array usando Arrays.copyOf
             lugares = Arrays.copyOf(lugares, lugares.length + 1);
             lugares[lugares.length - 1] = nuevo;
 
+            // Actualizar interfaz
             actualizarLista();
 
             showMessage("Lugar añadido correctamente", Color.GREEN);
@@ -73,17 +81,20 @@ public class HelloApplication extends Application {
             paisField.clear();
         });
 
+        // Separador entre formulario y lista
         Separator separator = new Separator();
 
         // Agregar todo al root
         root.getChildren().addAll(title, grid, guardarButton, messageLabel, separator, listaLugaresVBox);
 
+        // Configurar escena y stage
         Scene scene = new Scene(root, 400, 500);
         stage.setTitle("Gestión de Lugares");
         stage.setScene(scene);
         stage.show();
     }
 
+    // Método para actualizar la lista de tarjetas
     private void actualizarLista() {
         listaLugaresVBox.getChildren().clear();
         for (Lugar l : lugares) {
@@ -102,11 +113,13 @@ public class HelloApplication extends Application {
         }
     }
 
+    // Método auxiliar para mostrar mensaje
     private void showMessage(String mensaje, Color color) {
         messageLabel.setTextFill(color);
         messageLabel.setText(mensaje);
     }
 
+    // Clase interna Lugar
     private static class Lugar {
         String nombre;
         String pais;
