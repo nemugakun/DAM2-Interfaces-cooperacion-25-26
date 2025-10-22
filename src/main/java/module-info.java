@@ -15,4 +15,5 @@ module es.vallecidacos.dam2interfacescooperacion2526 {
     exports es.vallecidacos.dam2interfacescooperacion2526;
     exports es.vallecidacos.dam2interfacescooperacion2526.sara;
     exports es.vallecidacos.dam2interfacescooperacion2526.phaber to javafx.graphics;
+    exports es.vallecidacos.dam2interfacescooperacion2526.jorge;
 }
