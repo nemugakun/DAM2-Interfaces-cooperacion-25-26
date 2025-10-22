@@ -56,7 +56,7 @@ public class RegistrarEmpleado extends StackPane {
         formGrid.add(new Label("Fecha de Baja:"), 0, 7);
         formGrid.add(dpFechaBaja, 1, 7);
 
-        // Botón de ejemplo
+        // Botónes anclados abajo a la derecha
         Button btnRegistrar = new Button("Registrar");
         Button btnCancelar = new Button("Cancelar");
         HBox Botones = new HBox(btnRegistrar, btnCancelar);
