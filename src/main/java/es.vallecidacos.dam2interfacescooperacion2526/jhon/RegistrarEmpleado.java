@@ -61,7 +61,7 @@ public class RegistrarEmpleado extends StackPane {
         Button btnCancelar = new Button("Cancelar");
         HBox Botones = new HBox(btnRegistrar, btnCancelar);
         StackPane buttonBox = new StackPane(Botones);
-        Botones.setPadding(new Insets(20, 200, 0, 0));
+        Botones.setAlignment(Pos.BOTTOM_RIGHT);
 
         // Título centrado
         Label titleLabel = new Label("Registro de Empleado");
